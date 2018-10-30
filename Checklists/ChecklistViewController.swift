@@ -16,6 +16,8 @@ class ChecklistViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         let rowItem0 = ChecklistItem()
         let rowItem1 = ChecklistItem()
         let rowItem2 = ChecklistItem()
@@ -72,6 +74,19 @@ class ChecklistViewController: UITableViewController {
         } else {
             cell.accessoryType = .none
         }
+    }
+    
+    // MARK:- Actions
+    @IBAction func addItem() {
+        let newRowIndex = items.count
+        
+        let item = ChecklistItem()
+        item.text = "New checklist"
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
     }
     
 }
