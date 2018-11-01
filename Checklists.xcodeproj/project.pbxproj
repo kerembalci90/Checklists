@@ -15,6 +15,7 @@
 		550247332184D69900318B70 /* ChecklistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550247322184D69900318B70 /* ChecklistsTests.swift */; };
 		5502473E2184D69900318B70 /* ChecklistsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502473D2184D69900318B70 /* ChecklistsUITests.swift */; };
 		5524795921862DFE00DB2ACA /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524795821862DFE00DB2ACA /* ChecklistItem.swift */; };
+		55467BDF218AB073006A5FA6 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55467BDE218AB073006A5FA6 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		5502473D2184D69900318B70 /* ChecklistsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsUITests.swift; sourceTree = "<group>"; };
 		5502473F2184D69900318B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5524795821862DFE00DB2ACA /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		55467BDE218AB073006A5FA6 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				550247262184D69800318B70 /* LaunchScreen.storyboard */,
 				550247292184D69800318B70 /* Info.plist */,
 				5524795821862DFE00DB2ACA /* ChecklistItem.swift */,
+				55467BDE218AB073006A5FA6 /* AddItemViewController.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				550247202184D69700318B70 /* ChecklistViewController.swift in Sources */,
+				55467BDF218AB073006A5FA6 /* AddItemViewController.swift in Sources */,
 				5524795921862DFE00DB2ACA /* ChecklistItem.swift in Sources */,
 				5502471E2184D69700318B70 /* AppDelegate.swift in Sources */,
 			);
