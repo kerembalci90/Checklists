@@ -16,28 +16,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         // Do any additional setup after loading the view, typically from a nib.
         
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let rowItem0 = ChecklistItem()
-        let rowItem1 = ChecklistItem()
-        let rowItem2 = ChecklistItem()
-        let rowItem3 = ChecklistItem()
-        let rowItem4 = ChecklistItem()
-        rowItem0.text = "Walk the dog"
-        rowItem1.text = "Brush teeth"
-        rowItem1.isChecked = true;
-        rowItem2.text = "Learn iOS Development"
-        rowItem3.text = "Soccer practice"
-        rowItem4.text = "Eat ice cream"
-        rowItem4.isChecked = true;
-        
-        items.append(rowItem0)
-        items.append(rowItem1)
-        items.append(rowItem2)
-        items.append(rowItem3)
-        items.append(rowItem4)
-        
-        print("Documents folder is \(documentsDirectory())")
-        print("Data file path is \(dataFilePath())")
+        loadChecklistItems()
     }
 
     // MARK:- Table View Data Source
@@ -155,5 +134,17 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     func documentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
+    }
+    
+    func loadChecklistItems() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                items = try decoder.decode([ChecklistItem].self, from: data)
+            } catch {
+                print("Error decoding item array: \(error.localizedDescription)")
+            }
+        }
     }
 }
