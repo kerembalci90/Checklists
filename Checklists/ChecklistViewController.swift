@@ -11,10 +11,13 @@ import UIKit
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
     var items = [ChecklistItem]()
     
+    var checklist: Checklist!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadChecklistItems()
+        title = checklist.name
     }
 
     // MARK:- Table View Data Source
