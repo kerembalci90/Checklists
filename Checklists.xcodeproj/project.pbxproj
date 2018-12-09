@@ -109,18 +109,11 @@
 		5502471C2184D69700318B70 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				55FC511D21BD90040071C83D /* Resources */,
+				55FC511C21BD8FFB0071C83D /* View Controllers */,
+				55FC511B21BD8FF30071C83D /* Data Models */,
 				5502471D2184D69700318B70 /* AppDelegate.swift */,
-				5502471F2184D69700318B70 /* ChecklistViewController.swift */,
-				550247212184D69700318B70 /* Main.storyboard */,
-				550247242184D69800318B70 /* Assets.xcassets */,
-				550247262184D69800318B70 /* LaunchScreen.storyboard */,
 				550247292184D69800318B70 /* Info.plist */,
-				5524795821862DFE00DB2ACA /* ChecklistItem.swift */,
-				55467BDE218AB073006A5FA6 /* ItemDetailViewController.swift */,
-				5541B7BB21AA2FFB0010F620 /* AllListsViewController.swift */,
-				5541B7BD21AA49390010F620 /* Checklist.swift */,
-				5541B7BF21AE1FD60010F620 /* ListDetailViewController.swift */,
-				55D10C1921B77C6E0043BADA /* DataModel.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -141,6 +134,37 @@
 				5502473F2184D69900318B70 /* Info.plist */,
 			);
 			path = ChecklistsUITests;
+			sourceTree = "<group>";
+		};
+		55FC511B21BD8FF30071C83D /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				5541B7BD21AA49390010F620 /* Checklist.swift */,
+				5524795821862DFE00DB2ACA /* ChecklistItem.swift */,
+				55D10C1921B77C6E0043BADA /* DataModel.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		55FC511C21BD8FFB0071C83D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5541B7BB21AA2FFB0010F620 /* AllListsViewController.swift */,
+				5502471F2184D69700318B70 /* ChecklistViewController.swift */,
+				55467BDE218AB073006A5FA6 /* ItemDetailViewController.swift */,
+				5541B7BF21AE1FD60010F620 /* ListDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		55FC511D21BD90040071C83D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				550247242184D69800318B70 /* Assets.xcassets */,
+				550247262184D69800318B70 /* LaunchScreen.storyboard */,
+				550247212184D69700318B70 /* Main.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
