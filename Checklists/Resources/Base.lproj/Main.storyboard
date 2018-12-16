@@ -106,6 +106,7 @@
         <!--Add Checklist-->
         <scene sceneID="0Rp-N0-o0x">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IEj-C8-NpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="ListDetailViewController" id="Ej6-pc-ng1" customClass="ListDetailViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListDetailViewController" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="haN-Dc-pkc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -142,6 +143,43 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="f1F-Yc-F7K">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="mdD-ov-Vl1">
+                                        <rect key="frame" x="0.0" y="115" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdD-ov-Vl1" id="4xC-2X-NlG">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94Q-rk-gN2">
+                                                    <rect key="frame" x="16" y="11.5" width="273" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAH-zh-JDw">
+                                                    <rect key="frame" x="297" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="QSi-kw-mgQ"/>
+                                                        <constraint firstAttribute="width" constant="36" id="bIo-Et-hnv"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="94Q-rk-gN2" firstAttribute="centerY" secondItem="4xC-2X-NlG" secondAttribute="centerY" id="Ioq-Y6-XlI"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZAH-zh-JDw" secondAttribute="trailing" constant="8" id="J80-Ov-baN"/>
+                                                <constraint firstItem="94Q-rk-gN2" firstAttribute="leading" secondItem="4xC-2X-NlG" secondAttribute="leadingMargin" id="RIo-RI-Ygw"/>
+                                                <constraint firstItem="ZAH-zh-JDw" firstAttribute="centerY" secondItem="4xC-2X-NlG" secondAttribute="centerY" id="qFf-OG-HoX"/>
+                                                <constraint firstItem="ZAH-zh-JDw" firstAttribute="leading" secondItem="94Q-rk-gN2" secondAttribute="trailing" constant="8" id="yJg-q5-jjE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Tva-DH-H6Y" kind="show" identifier="PickIcon" id="bGl-6s-QA8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Ej6-pc-ng1" id="vri-th-KKD"/>
@@ -164,12 +202,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="S33-zk-Rcc" id="dw7-9d-TVY"/>
+                        <outlet property="iconImage" destination="ZAH-zh-JDw" id="cZc-lH-jtV"/>
                         <outlet property="textField" destination="mHS-wu-Gn3" id="5N5-Et-VX3"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IEj-C8-NpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.60000000000002" y="124.58770614692655"/>
+            <point key="canvasLocation" x="853.125" y="124.30453879941435"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="Lny-uV-rp2">
@@ -236,6 +274,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnR-kb-kb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2580" y="-581"/>
+        </scene>
+        <!--Choose Icon-->
+        <scene sceneID="xV9-d8-6H7">
+            <objects>
+                <tableViewController id="Tva-DH-H6Y" customClass="IconPickerViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5WT-Vm-puZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IconCell" textLabel="PHp-bn-SNv" style="IBUITableViewCellStyleDefault" id="l5V-uh-q1v">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l5V-uh-q1v" id="WjJ-Fx-fvK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PHp-bn-SNv">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tva-DH-H6Y" id="ahh-ac-IiK"/>
+                            <outlet property="delegate" destination="Tva-DH-H6Y" id="raL-dU-gga"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Icon" id="bga-Ag-zPN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bps-AW-rZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ttI-a9-ITf">
