@@ -47,7 +47,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     
     func configureLabel(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
-        label.text = "\(item.itemID): \(item.text)"
+        label.text = item.text
     }
     
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
